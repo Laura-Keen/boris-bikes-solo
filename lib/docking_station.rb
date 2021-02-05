@@ -5,7 +5,7 @@ class DockingStation
 
   def initialize
     @bike = []
-  end 
+  end
 
   def release_bike
     if bike.empty?
@@ -16,14 +16,15 @@ class DockingStation
   end
 
   def dock(bike)
+    raise 'Capacity full!!!' unless self.bike.empty?
     self.bike << bike
   end
 
- 
+
 
   # This method is no longer needed because of the attribute reader
   # def bike
   #   @bike
   # end
-  
+
 end
