@@ -18,17 +18,17 @@ describe DockingStation do
 
     it { is_expected.to respond_to(:dock).with(1).arguments }
 
-    it { is_expected.to respond_to(:bike)}
+    it { is_expected.to respond_to(:bikes)}
 
     it 'docks something' do
       # return the bike we just docked
       subject.dock(bike)
-      expect(subject.bike).to include(bike)
+      expect(subject.bikes).to include(bike)
     end
 
     context 'when capacity is full' do
       it 'raises error' do
-        subject.dock(bike)
+        20.times { subject.dock(bike) }
         expect { subject.dock(bike) }.to raise_error 'Capacity full!!!' 
       end
     end
